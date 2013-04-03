@@ -18,93 +18,95 @@
             Languages='1033'
             Compressed='yes'
             SummaryCodepage='utf-8' />
-        <Directory Id='ProgramFilesFolder' Name='PFiles'>
-            <Directory Id='OpenVPN' Name='OpenVPN'>
-                <Directory Id='INSTALLDIR' Name='OpenVPN 2.3.1'>
-                    <Directory Id='OpeVPN-Binaries' Name='bin'>
-                        <Component Id='OpenVPN-Client-Binary' Guid='41564918-3fa4-4713-8ef4-5afb9d4aa152'>
-                            <File Id='openvpn.exe' Name='openvpn.exe' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/openvpn.exe' KeyPath='yes'>
-                            </File>
-                        </Component>
-                        <Component Id='OpenVPN-Client-GUI' Guid='fc7ef111-379b-45d7-b7bf-5ba7c2b78d85'>
-                            <File Id='openvpn-gui.exe' Name='openvpn-gui.exe' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/openvpn-gui.exe' KeyPath='yes'>
-                                <Shortcut
-                                    Id='OpenVPN-Client-GUI-Shortcut-Desktop'
-                                    Directory='ProgramMenuDir'
-                                    Name='OpenVPN GUI'
-                                    WorkingDirectory='INSTALLDIR'
-                                    Icon='openvpn-gui.exe'
-                                    IconIndex='0'
-                                    Advertise='yes' />
-                            </File>
-                        </Component>
-                        <Component Id='OpenVPN-Server-Binary' Guid=''>
-                            <File Id='openvpnsrv.exe' Name='openvpnserv.exe' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/openvpnserv.exe' KeyPath='yes'>
-                            </File>
-                        </Component>
-                        <Component Id='OpenSSL-Binary' Guid=''>
-                            <File Id='openssl.exe' Name='openssl.exe' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/openssl.exe' KeyPath='yes'>
-                            </File>
-                        </Component>
-                        <Component Id='libeay32-library' Guid=''>
-                            <File Id='libeay32.dll' Name='libeay32.dll' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/libeay32.dll' KeyPath='yes'>
-                            </File>
-                        </Component>
-                        <Component Id='liblzo2-library' Guid=''>
-                            <File Id='liblzo2-2.dll' Name='liblzo2-2.dll' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/liblzo2-2.dll' KeyPath='yes'>
-                            </File>
-                        </Component>
-                        <Component Id='libpkcs11-helper-1-library' Guid=''>
-                            <File Id='libpkcs11-helper-1.dll' Name='libpkcs11-helper-1.dll' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/libpkcs11-helper-1.dll' KeyPath='yes'>
-                            </File>
-                        </Component>
-                        <Component Id='ssleay32-library' Guid=''>
-                            <File Id='ssleay32.dll' Name='ssleay32.dll' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/ssleay32.dll' KeyPath='yes'>
-                            </File>
-                        </Component>
-                        <!--
-                            TODO: The following 2 files (addtap.bat + deltap.bat) need to be written using a custom action
-                            during the installation as they contain dynamic content depending on INSTALLDIR etc.
-                            Some information regarding "custom actions":
-                            http://stackoverflow.com/questions/2372978/wix-customaction-execommand-hide-console
-                            http://wix.sourceforge.net/manual-wix3/qtexec.htm
-                        -->
-                        <!--
-                        <Component Id='addtap-script' Guid=''>
-                            <File Id='addtap.bat' Name='addtap.bat' KeyPath='no'>
-                            </File>
-                            # Content taken from tap-windows.nsi:
-                            rem Add a new TAP virtual ethernet adapter$\r$\n
-                            "$INSTDIR\bin\${DEVCON_BASENAME}" install "$INSTDIR\driver\OemWin2k.inf" ${PRODUCT_TAP_WIN_COMPONENT_ID}$\r$\n
-                            pause$\r$\n
-                        </Component>
-                        <Component Id='deltap-script' Guid=''>
-                            <File Id='deltap.bat' Name='deltap.bat' KeyPath='no'>
-                            </File>
-                            # Content taken from tap-windows.nsi:
-                            echo WARNING: this script will delete ALL TAP virtual adapters (use the device manager to delete adapters one at a time)$\r$\n
-                            pause$\r$\n
-                            "$INSTDIR\bin\${DEVCON_BASENAME}" remove ${PRODUCT_TAP_WIN_COMPONENT_ID}$\r$\n
-                            pause$\r$\n
-                        </Component>
-                        -->
-                        <Component Id='' Guid=''>
-                            <File Id='' Name='' Source='' KeyPath='yes'>
-                            </File>
-                        </Component>
+        <Directory Id='TARGETDIR' Name='SourceDir'>
+            <Directory Id='ProgramFilesFolder' Name='PFiles'>
+                <Directory Id='OpenVPN' Name='OpenVPN'>
+                    <Directory Id='INSTALLDIR' Name='OpenVPN 2.3.1'>
+                        <Directory Id='OpeVPN-Binaries' Name='bin'>
+                            <Component Id='OpenVPN-Client-Binary' Guid='41564918-3fa4-4713-8ef4-5afb9d4aa152'>
+                                <File Id='openvpn.exe' Name='openvpn.exe' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/openvpn.exe' KeyPath='yes'>
+                                </File>
+                            </Component>
+                            <Component Id='OpenVPN-Client-GUI' Guid='fc7ef111-379b-45d7-b7bf-5ba7c2b78d85'>
+                                <File Id='openvpn-gui.exe' Name='openvpn-gui.exe' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/openvpn-gui.exe' KeyPath='yes'>
+                                    <Shortcut
+                                        Id='OpenVPN-Client-GUI-Shortcut-Desktop'
+                                        Directory='ProgramMenuDir'
+                                        Name='OpenVPN GUI'
+                                        WorkingDirectory='INSTALLDIR'
+                                        Icon='openvpn-gui.exe'
+                                        IconIndex='0'
+                                        Advertise='yes' />
+                                </File>
+                            </Component>
+                            <Component Id='OpenVPN-Server-Binary' Guid=''>
+                                <File Id='openvpnsrv.exe' Name='openvpnserv.exe' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/openvpnserv.exe' KeyPath='yes'>
+                                </File>
+                            </Component>
+                            <Component Id='OpenSSL-Binary' Guid=''>
+                                <File Id='openssl.exe' Name='openssl.exe' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/openssl.exe' KeyPath='yes'>
+                                </File>
+                            </Component>
+                            <Component Id='libeay32-library' Guid=''>
+                                <File Id='libeay32.dll' Name='libeay32.dll' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/libeay32.dll' KeyPath='yes'>
+                                </File>
+                            </Component>
+                            <Component Id='liblzo2-library' Guid=''>
+                                <File Id='liblzo2-2.dll' Name='liblzo2-2.dll' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/liblzo2-2.dll' KeyPath='yes'>
+                                </File>
+                            </Component>
+                            <Component Id='libpkcs11-helper-1-library' Guid=''>
+                                <File Id='libpkcs11-helper-1.dll' Name='libpkcs11-helper-1.dll' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/libpkcs11-helper-1.dll' KeyPath='yes'>
+                                </File>
+                            </Component>
+                            <Component Id='ssleay32-library' Guid=''>
+                                <File Id='ssleay32.dll' Name='ssleay32.dll' Source='resources/openvpn-install-2.3.1-I001-x86_64/bin/ssleay32.dll' KeyPath='yes'>
+                                </File>
+                            </Component>
+                            <!--
+                                TODO: The following 2 files (addtap.bat + deltap.bat) need to be written using a custom action
+                                during the installation as they contain dynamic content depending on INSTALLDIR etc.
+                                Some information regarding "custom actions":
+                                http://stackoverflow.com/questions/2372978/wix-customaction-execommand-hide-console
+                                http://wix.sourceforge.net/manual-wix3/qtexec.htm
+                            -->
+                            <!--
+                            <Component Id='addtap-script' Guid=''>
+                                <File Id='addtap.bat' Name='addtap.bat' KeyPath='no'>
+                                </File>
+                                # Content taken from tap-windows.nsi:
+                                rem Add a new TAP virtual ethernet adapter$\r$\n
+                                "$INSTDIR\bin\${DEVCON_BASENAME}" install "$INSTDIR\driver\OemWin2k.inf" ${PRODUCT_TAP_WIN_COMPONENT_ID}$\r$\n
+                                pause$\r$\n
+                            </Component>
+                            <Component Id='deltap-script' Guid=''>
+                                <File Id='deltap.bat' Name='deltap.bat' KeyPath='no'>
+                                </File>
+                                # Content taken from tap-windows.nsi:
+                                echo WARNING: this script will delete ALL TAP virtual adapters (use the device manager to delete adapters one at a time)$\r$\n
+                                pause$\r$\n
+                                "$INSTDIR\bin\${DEVCON_BASENAME}" remove ${PRODUCT_TAP_WIN_COMPONENT_ID}$\r$\n
+                                pause$\r$\n
+                            </Component>
+                            -->
+                            <Component Id='' Guid=''>
+                                <File Id='' Name='' Source='' KeyPath='yes'>
+                                </File>
+                            </Component>
+                        </Directory>
                     </Directory>
                 </Directory>
             </Directory>
-        </Directory>
-        <Directory Id='ProgramMenuFolder' Name='Programs'>
-            <Directory Id='ProgramMenuDir' Name='OpenVPN 2.3.1'>
-                <Component Id='ProgramMenuDir' Guid=''>
-                    <RemoveFolder Id='ProgramMenuDir' On='uninstall' />
-                    <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
-                </Component>
+            <Directory Id='ProgramMenuFolder' Name='Programs'>
+                <Directory Id='ProgramMenuDir' Name='OpenVPN 2.3.1'>
+                    <Component Id='ProgramMenuDir' Guid=''>
+                        <RemoveFolder Id='ProgramMenuDir' On='uninstall' />
+                        <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+                    </Component>
+                </Directory>
             </Directory>
+            <Directory Id='DesktopFolder' Name='Desktop' />
         </Directory>
-        <Directory Id='DesktopFolder' Name='Desktop' />
         <Feature Id='Complete' Level='1'>
             <ComponentRef Id='OpenVPN-Client-Binary' />
             <ComponentRef Id='OpenVPN-Client-GUI' />

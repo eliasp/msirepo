@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+    <!-- TODO: I'm still a bit unsure what the proper values to put here are... -->
     <Product
         Name='OpenVPN 2.3.1'
         Id='d9b18e7f-1930-400c-b943-92b215d3b7ff'
@@ -8,6 +9,7 @@
         Codepage='utf-8'
         Version='2.3.1'
         Manufacturer='OpenVPN Technologies, Inc.' >
+        <!-- TODO: I'm still a bit unsure what the proper values to put here are... -->
         <Package
             Id='*'
             Keywords='Installer'

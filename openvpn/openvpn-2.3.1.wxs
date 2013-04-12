@@ -9,11 +9,6 @@
         Codepage='1252'
         Version='2.3.1'
         Manufacturer='OpenVPN Technologies, Inc.' >
-        <Media
-            Id='1'
-            Cabinet=''
-            CompressionLevel='none',
-            EmbedCab='yes' />
         <!-- TODO: I'm still a bit unsure what the proper values to put here are... -->
         <Package
             Id='*'
@@ -25,6 +20,7 @@
             Languages='1033'
             Compressed='yes'
             SummaryCodepage='1252' />
+        <Media Id='1' />
         <Directory Id='TARGETDIR' Name='SourceDir'>
             <Directory Id='ProgramFilesFolder' Name='PFiles'>
                 <Directory Id='OpenVPN' Name='OpenVPN'>

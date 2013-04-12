@@ -21,7 +21,9 @@
             Languages='1033'
             Compressed='yes'
             SummaryCodepage='1252' />
-        <Media Id='1' />
+        <Media
+            Id='1'
+            Cabinet='media.cab' />
         <Directory Id='TARGETDIR' Name='SourceDir'>
             <Directory Id='ProgramFilesFolder' Name='PFiles'>
                 <Directory Id='OpenVPN' Name='OpenVPN'>

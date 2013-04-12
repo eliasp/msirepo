@@ -9,7 +9,9 @@ handle version upgrades etc. All this is still far from being a perfect package 
 but it's a drastical improvement over just using regular installers.
 
 The idea of a OpenSource MSI repository is driven by the fact, that there is now a full toolchain to
-build MSIs based on the WiX specification called [msitools](https://live.gnome.org/msitools).
+build MSIs based on the WiX specification called [msitools](https://live.gnome.org/msitools) which
+doesn't require WINE, Mono or any other hacks and works in a headless Linux build-server
+environment.
 
 For now, only OpenVPN will be packaged. If this attempt is successful, further applications might be
 added to the repository.

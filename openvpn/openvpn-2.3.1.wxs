@@ -9,6 +9,11 @@
         Codepage='1252'
         Version='2.3.1'
         Manufacturer='OpenVPN Technologies, Inc.' >
+        <Media
+            Id='1'
+            Cabinet=''
+            CompressionLevel='none',
+            EmbedCab='yes' />
         <!-- TODO: I'm still a bit unsure what the proper values to put here are... -->
         <Package
             Id='*'

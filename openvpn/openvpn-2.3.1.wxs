@@ -17,7 +17,7 @@
             Description='OpenVPN 2.3.1 MSI'
             Comments='OpenVPN is a registered trademark of OpenVPN Technologies, Inc.'
             Manufacturer='Elias Probst'
-            InstallerVersion='1'
+            InstallerVersion='100'
             Languages='1033'
             Compressed='yes'
             SummaryCodepage='1252' />

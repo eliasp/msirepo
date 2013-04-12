@@ -6,7 +6,7 @@
         Id='d9b18e7f-1930-400c-b943-92b215d3b7ff'
         UpgradeCode='efd94600-a3b8-11e2-9e96-0800200c9a66'
         Language='1033'
-        Codepage='utf-8'
+        Codepage='1252'
         Version='2.3.1'
         Manufacturer='OpenVPN Technologies, Inc.' >
         <!-- TODO: I'm still a bit unsure what the proper values to put here are... -->
@@ -19,7 +19,7 @@
             InstallerVersion='1'
             Languages='1033'
             Compressed='yes'
-            SummaryCodepage='utf-8' />
+            SummaryCodepage='1252' />
         <Directory Id='TARGETDIR' Name='SourceDir'>
             <Directory Id='ProgramFilesFolder' Name='PFiles'>
                 <Directory Id='OpenVPN' Name='OpenVPN'>

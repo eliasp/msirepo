@@ -1,1 +1,7 @@
+*.swp
 */resources
+*.msi
+*.wixobj
+*.wixpdb
+*.cab
+*~

@@ -27,6 +27,10 @@
         <Directory Id='TARGETDIR' Name='SourceDir'>
             <Directory Id='ProgramFilesFolder' Name='PFiles'>
                 <Directory Id='OpenVPN' Name='OpenVPN'>
+                    <Component Id='OpenVPN' Guid='9e0c4e90-ad03-11e2-9e96-0800200c9a66'>
+                        <RemoveFolder Id='OpenVPN' On='uninstall' />
+                        <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+                    </Component>
                     <Directory Id='INSTALLDIR' Name='OpenVPN 2.3.1'>
                         <Directory Id='OpenVPN_Binaries' Name='bin' FileSource='resources\openvpn-install-2.3.1-I001-x86_64\bin'>
                             <Component Id='OpenVPN_Client_Binary' Guid='41564918-3fa4-4713-8ef4-5afb9d4aa152'>

@@ -1,11 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
     <?define OpenVPNResources='resources\openvpn-install-2.3.1-I001-x86_64\bin' ?>
+    <?define UpgradeCode='efd94600-a3b8-11e2-9e96-0800200c9a66' ?>
+    <?define OpenVPNVersion='2.3.1' ?>
     <!-- TODO: I'm still a bit unsure what the proper values to put here are... -->
     <Product
-        Name='OpenVPN 2.3.1'
-        Id='d9b18e7f-1930-400c-b943-92b215d3b7ff'
-        UpgradeCode='efd94600-a3b8-11e2-9e96-0800200c9a66'
+        Name='OpenVPN $(var.OpenVPNVersion)'
+        Id='*'
+        UpgradeCode='$(var.UpgradeCode)'
         Language='1033'
         Codepage='1252'
         Version='2.3.1'
@@ -14,7 +16,7 @@
         <Package
             Id='*'
             Keywords='Installer'
-            Description='OpenVPN 2.3.1 MSI'
+            Description='OpenVPN $(var.OpenVPNVersion) MSI'
             Comments='OpenVPN is a registered trademark of OpenVPN Technologies, Inc.'
             Manufacturer='Elias Probst'
             InstallerVersion='100'
@@ -120,6 +122,7 @@
             <Directory Id='DesktopFolder' Name='Desktop' />
         </Directory>
         <Feature Id='Complete' Level='1'>
+            <ComponentRef Id='OpenVPN' />
             <ComponentRef Id='OpenVPN_Client_Binary' />
             <ComponentRef Id='OpenVPN_Client_GUI' />
             <ComponentRef Id='OpenVPN_Server_Binary' />
